@@ -43,7 +43,7 @@ jobs:
         id: getver
         run: |
           $ver = Get-Content newver.txt
-          Write-Output "NEW_VER=$ver" >> $env:GITHUB_OUTPUT
+          Add-Content -Path $Env:GITHUB_OUTPUT -Value "NEW_VER=$ver"
 
       - name: Read current version from manifest
         id: getcurrent
@@ -52,9 +52,9 @@ jobs:
           $dir = "winget-pkgs/manifests/n/NAVER/Whale"
           if (Test-Path $dir) {
             $current = Get-ChildItem $dir -Directory | Select-Object -Expand Name | Sort-Object -Descending | Select-Object -First 1
-            Write-Output "CUR_VER::$current" >> $env:GITHUB_OUTPUT
+            Add-Content -Path $Env:GITHUB_OUTPUT -Value "CUR_VER=$current"
           } else {
-            Write-Output "CUR_VER::" >> $env:GITHUB_OUTPUT
+            Add-Content -Path $Env:GITHUB_OUTPUT -Value "CUR_VER="
           }
 
       - name: Debug
