@@ -43,7 +43,7 @@ jobs:
         id: getver
         run: |
           $ver = Get-Content newver.txt
-          Write-Output "::set-output name=NEW_VER::$ver"
+          Write-Output "NEW_VER=$ver" >> $env:GITHUB_OUTPUT
 
       - name: Read current version from manifest
         id: getcurrent
@@ -52,18 +52,18 @@ jobs:
           $dir = "winget-pkgs/manifests/n/NAVER/Whale"
           if (Test-Path $dir) {
             $current = Get-ChildItem $dir -Directory | Select-Object -Expand Name | Sort-Object -Descending | Select-Object -First 1
-            Write-Output "::set-output name=CUR_VER::$current"
+            Write-Output "CUR_VER::$current" >> $env:GITHUB_OUTPUT
           } else {
-            Write-Output "::set-output name=CUR_VER::"
+            Write-Output "CUR_VER::" >> $env:GITHUB_OUTPUT
           }
 
-      - name: Decide to update
-        run: |
-          echo "New: ${{ steps.getver.outputs.NEW_VER }}, Current: ${{ steps.getcurrent.outputs.CUR_VER }}"
+      - name: Debug
         shell: pwsh
+        run: |
+          Write-Host "New: $env.NEW_VER, Current: $env.CUR_VER"
 
       - name: Update Winget only if version changed
-        if: steps.getver.outputs.NEW_VER != steps.getcurrent.outputs.CUR_VER
+        if: ${{ steps.getver.outputs.NEW_VER != steps.getcurrent.outputs.CUR_VER }}
         shell: pwsh
         env:
           PACKAGE_ID: "NAVER.Whale"
