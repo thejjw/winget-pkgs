@@ -76,7 +76,7 @@ jobs:
           wingetcreate update $env:PACKAGE_ID `
             --version $env:VERSION `
             --urls $env:URL_X86 $env:URL_X64 $env:URL_ARM64 `
-#            --submit --token $env:WINGET_PAT
+            --submit --token $env:WINGET_PAT
 
       - name: "Debug: list branch commits"
         if: steps.getver.outputs.NEW_VER != steps.getcurrent.outputs.CUR_VER
