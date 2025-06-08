@@ -1,0 +1,77 @@
+name: Update NAVER Whale in Winget
+
+# lets save some time if i can automate this
+# 2025.6 @thejjw
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # daily check; adjust as needed
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout winget-pkgs
+        uses: actions/checkout@v4
+        with:
+          repository: microsoft/winget-pkgs
+          path: winget-pkgs
+          fetch-depth: 1
+
+      - name: Install wingetcreate
+        run: winget install wingetcreate --silent
+
+      - name: Determine Whale version
+        shell: pwsh
+        run: |
+          $uri = "https://installer-whale.pstatic.net/downloads/sa_installers/WhaleSetupX64.exe"
+          $tmp = [System.IO.Path]::GetTempFileName() + ".exe"
+          Invoke-WebRequest -Uri $uri -OutFile $tmp
+          $newVer = (Get-Item $tmp).VersionInfo.FileVersion
+          Write-Output "NEW_VER=$newVer" | Out-File newver.txt
+          Remove-Item $tmp
+
+      - name: Read new version
+        id: getver
+        run: |
+          $ver = Get-Content newver.txt
+          Write-Output "::set-output name=NEW_VER::$ver"
+
+      - name: Read current version from manifest
+        id: getcurrent
+        shell: pwsh
+        run: |
+          $dir = "winget-pkgs/manifests/n/NAVER/Whale"
+          if (Test-Path $dir) {
+            $current = Get-ChildItem $dir -Directory | Select-Object -Expand Name | Sort-Object -Descending | Select-Object -First 1
+            Write-Output "::set-output name=CUR_VER::$current"
+          } else {
+            Write-Output "::set-output name=CUR_VER::"
+          }
+
+      - name: Decide to update
+        run: |
+          echo "New: ${{ steps.getver.outputs.NEW_VER }}, Current: ${{ steps.getcurrent.outputs.CUR_VER }}"
+        shell: pwsh
+
+      - name: Update Winget only if version changed
+        if: steps.getver.outputs.NEW_VER != steps.getcurrent.outputs.CUR_VER
+        shell: pwsh
+        env:
+          PACKAGE_ID: "NAVER.Whale"
+          VERSION: ${{ steps.getver.outputs.NEW_VER }}
+          URL_X86: "https://installer-whale.pstatic.net/downloads/sa_installers/WhaleSetupX86.exe|x86"
+          URL_X64: "https://installer-whale.pstatic.net/downloads/sa_installers/WhaleSetupX64.exe|x64"
+          URL_ARM64: "https://installer-whale.pstatic.net/downloads/sa_installers/WhaleSetupARM64.exe|arm64"
+          WINGET_PAT: ${{ secrets.WINGET_PAT }}
+        run: |
+          wingetcreate update $env:PACKAGE_ID `
+            --version $env:VERSION `
+            --urls $env:URL_X86 $env:URL_X64 $env:URL_ARM64 `
+#            --submit --token $env:WINGET_PAT
+
+      - name: No update needed
+        if: steps.getver.outputs.NEW_VER == steps.getcurrent.outputs.CUR_VER
+        run: echo "Whale is already up-to-date (version ${{ steps.getver.outputs.NEW_VER }})"
+        shell: pwsh
