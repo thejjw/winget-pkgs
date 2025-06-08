@@ -36,7 +36,7 @@ jobs:
           $tmp = [System.IO.Path]::GetTempFileName() + ".exe"
           Invoke-WebRequest -Uri $uri -OutFile $tmp
           $newVer = (Get-Item $tmp).VersionInfo.FileVersion
-          Write-Output "NEW_VER=$newVer" | Out-File newver.txt
+          Write-Output "$newVer" | Out-File newver.txt
           Remove-Item $tmp
 
       - name: Read new version
