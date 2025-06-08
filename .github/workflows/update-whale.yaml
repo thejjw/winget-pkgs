@@ -18,6 +18,9 @@ jobs:
           repository: microsoft/winget-pkgs
           path: winget-pkgs
           fetch-depth: 1
+          sparse-checkout: |
+            manifests/n/NAVER/Whale
+          sparse-checkout-cone-mode: true
 
       - name: Install wingetcreate
         run: winget install wingetcreate --silent
