@@ -51,7 +51,7 @@ jobs:
         run: |
           $dir = "winget-pkgs/manifests/n/NAVER/Whale"
           if (Test-Path $dir) {
-            $current = Get-ChildItem $dir -Directory | Select-Object -Expand Name | Sort-Object -Descending | Select-Object -First 1 -ExpandProperty Name
+            $current = Get-ChildItem $dir -Directory | Select-Object -Expand Name | Sort-Object -Descending | Select-Object -First 1
             "CUR_VER=$current" | Out-File -FilePath $Env:GITHUB_OUTPUT -Encoding utf8 -Append
           } else {
             "CUR_VER=" | Out-File -FilePath $Env:GITHUB_OUTPUT -Encoding utf8 -Append
