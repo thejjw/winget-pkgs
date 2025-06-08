@@ -10,8 +10,12 @@ on:
 
 jobs:
   update:
-    runs-on: windows-latest
+    runs-on: windows-2025
     steps:
+      - name: update winget
+        run: |
+          winget upgrade winget --accept-package-agreements --accept-source-agreements --disable-interactivity
+
       - name: Checkout winget-pkgs
         uses: actions/checkout@v4
         with:
@@ -73,6 +77,12 @@ jobs:
             --version $env:VERSION `
             --urls $env:URL_X86 $env:URL_X64 $env:URL_ARM64 `
 #            --submit --token $env:WINGET_PAT
+
+      - name: "Debug: list branch commits"
+        if: steps.getver.outputs.NEW_VER != steps.getcurrent.outputs.CUR_VER
+        run: |
+          git --git-dir=winget-pkgs/.git --work-tree=winget-pkgs branch -vv
+        shell: pwsh
 
       - name: No update needed
         if: steps.getver.outputs.NEW_VER == steps.getcurrent.outputs.CUR_VER
