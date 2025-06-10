@@ -5,7 +5,7 @@ name: Update NAVER Whale in Winget
 
 on:
   schedule:
-    - cron: '30 4 * * 1,5'  # minute hour day-of-month month day-of-week
+    - cron: '0 0 1,15 * *'  # minute hour day-of-month month day-of-week
   workflow_dispatch:
 
 jobs:
