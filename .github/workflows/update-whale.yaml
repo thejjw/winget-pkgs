@@ -15,6 +15,7 @@ jobs:
       - name: update winget
         run: |
           winget upgrade winget --accept-package-agreements --accept-source-agreements --disable-interactivity
+        continue-on-error: true
 
       - name: Checkout winget-pkgs
         uses: actions/checkout@v4
