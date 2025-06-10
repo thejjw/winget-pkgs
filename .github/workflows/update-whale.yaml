@@ -28,7 +28,11 @@ jobs:
           sparse-checkout-cone-mode: true
 
       - name: Install wingetcreate
-        run: winget install wingetcreate --silent
+        run: winget install Microsoft.WingetCreate --silent
+
+      - name: Upgrade wingetcreate
+        run: winget upgrade Microsoft.WingetCreate --silent
+        continue-on-error: true
 
       - name: Determine Whale version
         shell: pwsh
