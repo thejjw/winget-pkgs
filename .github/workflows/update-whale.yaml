@@ -22,10 +22,20 @@ jobs:
         with:
           repository: microsoft/winget-pkgs
           path: winget-pkgs
-          fetch-depth: 1
+          fetch-depth: 0  # Need full history for proper sync
           sparse-checkout: |
             manifests/n/NAVER/Whale
           sparse-checkout-cone-mode: true
+
+      - name: Sync with upstream
+        shell: pwsh
+        run: |
+          cd winget-pkgs
+          git remote add upstream https://github.com/microsoft/winget-pkgs.git
+          git fetch upstream
+          git checkout master
+          git merge upstream/master --no-edit
+          git push origin master
 
       - name: Install wingetcreate
         run: winget install Microsoft.WingetCreate --silent
