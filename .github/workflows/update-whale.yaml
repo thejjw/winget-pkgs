@@ -27,6 +27,16 @@ jobs:
             manifests/n/NAVER/Whale
           sparse-checkout-cone-mode: true
 
+      - name: Sync with upstream
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          cd winget-pkgs
+          git remote add upstream https://github.com/microsoft/winget-pkgs.git 2>$null || echo "Upstream remote already exists"
+          git fetch upstream
+          git checkout master
+          git merge upstream/master --no-edit
+
       - name: Install wingetcreate
         run: winget install Microsoft.WingetCreate --silent
 
