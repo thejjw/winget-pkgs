@@ -7,13 +7,13 @@ InstallerType: inno
 Scope: machine
 UpgradeBehavior: install
 ProductCode: '{6A67D75D-B097-4828-B0DA-9257E00ECEF4}_is1'
-ReleaseDate: 2025-06-24
+ReleaseDate: 2025-08-01
 Installers:
 - Architecture: x64
-  InstallerUrl: https://github.com/cloud-fs/cloud-fs.github.io/releases/download/v0.9.1/CloudDrive2Setup-X64-0.9.1.exe
-  InstallerSha256: 132AFA340906093B907891F2FA601BA866ADB83FF4EBBF51E830CB955396B568
+  InstallerUrl: https://github.com/cloud-fs/cloud-fs.github.io/releases/download/v0.9.3/CloudDrive2Setup-X64-0.9.3.exe
+  InstallerSha256: 95EBAA664132343B02AFE5AFDF1587210994FDDDDDEBBC4067C008CCD0C2034E
 - Architecture: arm64
-  InstallerUrl: https://github.com/cloud-fs/cloud-fs.github.io/releases/download/v0.9.1/CloudDrive2Setup-Arm64-0.9.1.exe
-  InstallerSha256: 88D2770E0803241CCBCA87ED7F3894D01662C56D6F88C621DC4FD8C37D813594
+  InstallerUrl: https://github.com/cloud-fs/cloud-fs.github.io/releases/download/v0.9.3/CloudDrive2Setup-Arm64-0.9.3.exe
+  InstallerSha256: 0C642053AC09F2784A09828B64212F3D3348CBBADAAE06C24DD4D442915E34C2
 ManifestType: installer
 ManifestVersion: 1.10.0
