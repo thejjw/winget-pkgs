@@ -9,14 +9,14 @@ ProductCode: killbots
 Installers:
 - Architecture: x64
   Scope: user
-  InstallerUrl: https://cdn.kde.org/ci-builds/games/killbots/master/windows/killbots-master-794-windows-cl-msvc2022-x86_64.exe
-  InstallerSha256: 28980D99911C81C3C0F0D2FF758A2EFDCF9AD6B8B21EE38C32372BD445117321
+  InstallerUrl: https://cdn.kde.org/ci-builds/games/killbots/master/windows/killbots-master-798-windows-cl-msvc2022-x86_64.exe
+  InstallerSha256: 3BB9EB266D27A360EAE1F0C9D29C318AAAAD630CFAF9BF5A9A0DDB5DD5E3F705
   InstallerSwitches:
     Custom: /CurrentUser
 - Architecture: x64
   Scope: machine
-  InstallerUrl: https://cdn.kde.org/ci-builds/games/killbots/master/windows/killbots-master-794-windows-cl-msvc2022-x86_64.exe
-  InstallerSha256: 28980D99911C81C3C0F0D2FF758A2EFDCF9AD6B8B21EE38C32372BD445117321
+  InstallerUrl: https://cdn.kde.org/ci-builds/games/killbots/master/windows/killbots-master-798-windows-cl-msvc2022-x86_64.exe
+  InstallerSha256: 3BB9EB266D27A360EAE1F0C9D29C318AAAAD630CFAF9BF5A9A0DDB5DD5E3F705
   InstallerSwitches:
     Custom: /AllUsers
 ManifestType: installer
