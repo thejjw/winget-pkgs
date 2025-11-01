@@ -9,14 +9,14 @@ ProductCode: klines
 Installers:
 - Architecture: x64
   Scope: user
-  InstallerUrl: https://cdn.kde.org/ci-builds/games/klines/master/windows/klines-master-718-windows-cl-msvc2022-x86_64.exe
-  InstallerSha256: 838191C8249B68BF50E9ABDAA736B76005352F6113918E12ABAC9944E15753E4
+  InstallerUrl: https://cdn.kde.org/ci-builds/games/klines/master/windows/klines-master-746-windows-cl-msvc2022-x86_64.exe
+  InstallerSha256: D7DAD1D9973B62E66BF1C3D5EDD4566AF848663C9E2B277E38441950A5073801
   InstallerSwitches:
     Custom: /CurrentUser
 - Architecture: x64
   Scope: machine
-  InstallerUrl: https://cdn.kde.org/ci-builds/games/klines/master/windows/klines-master-718-windows-cl-msvc2022-x86_64.exe
-  InstallerSha256: 838191C8249B68BF50E9ABDAA736B76005352F6113918E12ABAC9944E15753E4
+  InstallerUrl: https://cdn.kde.org/ci-builds/games/klines/master/windows/klines-master-746-windows-cl-msvc2022-x86_64.exe
+  InstallerSha256: D7DAD1D9973B62E66BF1C3D5EDD4566AF848663C9E2B277E38441950A5073801
   InstallerSwitches:
     Custom: /AllUsers
 ManifestType: installer

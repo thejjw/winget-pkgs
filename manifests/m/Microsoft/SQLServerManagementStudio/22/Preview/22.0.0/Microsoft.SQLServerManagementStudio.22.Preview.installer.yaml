@@ -33,11 +33,15 @@ Commands:
 FileExtensions:
 - SQL
 AppsAndFeaturesEntries:
-- DisplayVersion: '22.0.0 Preview 1.0'
+- DisplayVersion: '22.0.0 Preview 4.0'
 Installers:
 - Architecture: x64
-  InstallerUrl: https://download.visualstudio.microsoft.com/download/pr/cb5675ab-daf5-48ff-8870-4bbdabf1a197/de893e3b857cb701e9c30931bcd13247c533a9585256a682a7799008c0008682/vs_SSMS.exe
-  InstallerSha256: de893e3b857cb701e9c30931bcd13247c533a9585256a682a7799008c0008682
-ReleaseDate: 2025-09-09
+  InstallerUrl: https://download.visualstudio.microsoft.com/download/pr/63fecf53-d9f5-41d2-af30-7af6da5608e0/2b79bacf513d46b6693b70f7f072253c817d13044fa2a584307e3926a2a4b814/vs_SSMS.exe
+  InstallerSha256: 2b79bacf513d46b6693b70f7f072253c817d13044fa2a584307e3926a2a4b814
+ReleaseDate: 2025-10-27
 ManifestType: installer
 ManifestVersion: 1.6.0
+
+
+
+

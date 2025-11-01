@@ -4,6 +4,7 @@
 PackageIdentifier: Tencent.CodeBuddy
 PackageVersion: 1.100.0
 InstallerType: inno
+Scope: user
 InstallerSwitches:
   Custom: /mergetasks=!runcode
 UpgradeBehavior: install
@@ -150,17 +151,11 @@ FileExtensions:
 - yaml
 - yml
 - zsh
-ReleaseDate: 2025-09-11
+ProductCode: '{CC6B787D-37A0-49E8-AE24-8559A032BE0C}_is1'
+ReleaseDate: 2025-10-29
 Installers:
 - Architecture: x64
-  Scope: user
-  InstallerUrl: https://codebuddy-1328495429.cos.accelerate.myqcloud.com/aiide/win32-x64-user/CodeBuddy-win32-x64-user-0.2.1.6884097-6a0a710e.exe
-  InstallerSha256: BD3283E776C93962CBFF3C3761FCB2FA0A0D88DD3666E3F3DD56ECC1033238D7
-  ProductCode: '{CC6B787D-37A0-49E8-AE24-8559A032BE0C}_is1'
-- Architecture: x64
-  Scope: machine
-  InstallerUrl: https://codebuddy-1328495429.cos.accelerate.myqcloud.com/aiide/win32-x64-system/CodeBuddy-win32-x64-system-0.2.1.6884097-6a0a710e.exe
-  InstallerSha256: 79AA95488645698D2B63FA6FC89689AF8423030FA343F70886B04EA12653934D
-  ProductCode: '{D77B7E06-80BA-4137-BCF4-654B95CCEBC5}_is1'
+  InstallerUrl: https://codebuddy-1328495429.cos.accelerate.myqcloud.com/aiide/win32-x64-user/CodeBuddy-win32-x64-user-1.1.6.11040835-3ad93acf1-cf385527.exe
+  InstallerSha256: 0737005310BEA846C053DC8D9A75B5247A0BDF4674A052A884F1F2730A123D37
 ManifestType: installer
 ManifestVersion: 1.10.0

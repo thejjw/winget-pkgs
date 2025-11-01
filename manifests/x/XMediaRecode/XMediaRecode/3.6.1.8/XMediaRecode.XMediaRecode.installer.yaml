@@ -1,4 +1,4 @@
-# Created with YamlCreate.ps1 Dumplings Mod
+# Automatically updated by the winget bot at 2025/Sep/17
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.10.0.schema.json
 
 PackageIdentifier: XMediaRecode.XMediaRecode
@@ -10,7 +10,7 @@ ReleaseDate: 2025-09-11
 Installers:
 - Architecture: x86
   InstallerUrl: https://www.xmedia-recode.de/download/XMediaRecode3618_setup.exe
-  InstallerSha256: 818BCFEEB1353E424494833B26D2B89229CFBAC9D8CD4AB6CBD5F7BDE1784897
+  InstallerSha256: 528FD2DDBAFD3C16EC9A7C88EAD1A5B7C5173F248C1F28F2A952F696BB802EA8
   Dependencies:
     PackageDependencies:
     - PackageIdentifier: Microsoft.VCRedist.2015+.x86
@@ -19,7 +19,7 @@ Installers:
     DefaultInstallLocation: '%ProgramFiles%\XMedia Recode'
 - Architecture: x64
   InstallerUrl: https://www.xmedia-recode.de/download/XMediaRecode3618_x64_setup.exe
-  InstallerSha256: 4B18E5BD71C845E444CA6B5F60EE07F2161F07063485DC3E014A867474DE879B
+  InstallerSha256: C630B99784C42A3BF0F07B055E95456288988BE47B8EA07E322303939BAFEA94
   Dependencies:
     PackageDependencies:
     - PackageIdentifier: Microsoft.VCRedist.2015+.x64
