@@ -9,14 +9,14 @@ ProductCode: Haruna
 Installers:
 - Architecture: x64
   Scope: user
-  InstallerUrl: https://cdn.kde.org/ci-builds/multimedia/haruna/master/windows/haruna-master-1475-windows-gcc-x86_64.exe
-  InstallerSha256: 1D9CFE3C146DEA048B82B0781B038CE10004D7C14B7E850440C233B0B2F652DC
+  InstallerUrl: https://cdn.kde.org/ci-builds/multimedia/haruna/master/windows/haruna-master-1525-windows-gcc-x86_64.exe
+  InstallerSha256: 8DB192593581B83EDBA739CC393BED3F82E6D1F0C5642CC881E9BA0F0D857BC4
   InstallerSwitches:
     Custom: /CurrentUser
 - Architecture: x64
   Scope: machine
-  InstallerUrl: https://cdn.kde.org/ci-builds/multimedia/haruna/master/windows/haruna-master-1475-windows-gcc-x86_64.exe
-  InstallerSha256: 1D9CFE3C146DEA048B82B0781B038CE10004D7C14B7E850440C233B0B2F652DC
+  InstallerUrl: https://cdn.kde.org/ci-builds/multimedia/haruna/master/windows/haruna-master-1525-windows-gcc-x86_64.exe
+  InstallerSha256: 8DB192593581B83EDBA739CC393BED3F82E6D1F0C5642CC881E9BA0F0D857BC4
   InstallerSwitches:
     Custom: /AllUsers
 ManifestType: installer

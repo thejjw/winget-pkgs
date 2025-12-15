@@ -9,14 +9,14 @@ ProductCode: bovo
 Installers:
 - Architecture: x64
   Scope: user
-  InstallerUrl: https://cdn.kde.org/ci-builds/games/bovo/master/windows/bovo-master-729-windows-cl-msvc2022-x86_64.exe
-  InstallerSha256: 1A22FAD9837C05A7010CF3CD3E1FB9F49DA0F90F3BDD3D431C1D093A75451466
+  InstallerUrl: https://cdn.kde.org/ci-builds/games/bovo/master/windows/bovo-master-759-windows-cl-msvc2022-x86_64.exe
+  InstallerSha256: 936C37B4C73C8F994DC0D1EC9BE50E1FABA3E3D19AB670F93B900C47A1E59E42
   InstallerSwitches:
     Custom: /CurrentUser
 - Architecture: x64
   Scope: machine
-  InstallerUrl: https://cdn.kde.org/ci-builds/games/bovo/master/windows/bovo-master-729-windows-cl-msvc2022-x86_64.exe
-  InstallerSha256: 1A22FAD9837C05A7010CF3CD3E1FB9F49DA0F90F3BDD3D431C1D093A75451466
+  InstallerUrl: https://cdn.kde.org/ci-builds/games/bovo/master/windows/bovo-master-759-windows-cl-msvc2022-x86_64.exe
+  InstallerSha256: 936C37B4C73C8F994DC0D1EC9BE50E1FABA3E3D19AB670F93B900C47A1E59E42
   InstallerSwitches:
     Custom: /AllUsers
 ManifestType: installer
