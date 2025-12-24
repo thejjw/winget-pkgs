@@ -24,19 +24,19 @@ FileExtensions:
 - webp
 - xht
 - xhtml
-ReleaseDate: 2025-12-10
+ReleaseDate: 2025-12-22
 Installers:
 - Architecture: x86
-  InstallerUrl: https://download-installer.cdn.mozilla.net/pub/devedition/releases/147.0b2/win32/fy-NL/Firefox%20Setup%20147.0b2.exe
-  InstallerSha256: 93FAD5178EED136820C5F2BF779217AEC2AB690566537D08EB398B7A00C0AC2C
+  InstallerUrl: https://download-installer.cdn.mozilla.net/pub/devedition/releases/147.0b7/win32/fy-NL/Firefox%20Setup%20147.0b7.exe
+  InstallerSha256: 08C9E2109D6606B162D072F0DF7BE71E91EC46AFFD5F03A3E4B29BF8F7387D27
   ProductCode: Firefox Developer Edition 147.0 (x86 fy-NL)
 - Architecture: x64
-  InstallerUrl: https://download-installer.cdn.mozilla.net/pub/devedition/releases/147.0b2/win64/fy-NL/Firefox%20Setup%20147.0b2.exe
-  InstallerSha256: EF4A1A14EEFD82C84F0225930D3EA126463BC4A1BD8B637EEC147F55E7D486AD
+  InstallerUrl: https://download-installer.cdn.mozilla.net/pub/devedition/releases/147.0b7/win64/fy-NL/Firefox%20Setup%20147.0b7.exe
+  InstallerSha256: 62574EE2BBEB9C9EB663C723FC806DAA670228FA39D3304185DE8B8B93FFDDD3
   ProductCode: Firefox Developer Edition 147.0 (x64 fy-NL)
 - Architecture: arm64
-  InstallerUrl: https://download-installer.cdn.mozilla.net/pub/devedition/releases/147.0b2/win64-aarch64/fy-NL/Firefox%20Setup%20147.0b2.exe
-  InstallerSha256: 38BADB2A1F06341C36CA43E97F97B8DBE6B0B7800F077ABB5812083F0315EB4C
+  InstallerUrl: https://download-installer.cdn.mozilla.net/pub/devedition/releases/147.0b7/win64-aarch64/fy-NL/Firefox%20Setup%20147.0b7.exe
+  InstallerSha256: D09DC47D7B1513617C7AA48001197B7CDE8DF0DF7A9E7AF3C884324882E60884
   ProductCode: Firefox Developer Edition 147.0 (arm64 fy-NL)
 ManifestType: installer
 ManifestVersion: 1.10.0

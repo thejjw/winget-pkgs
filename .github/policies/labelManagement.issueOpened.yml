@@ -43,6 +43,9 @@ configuration:
           - addReply:
               reply: >-
                 [![Validation Pipeline Badge](https://img.shields.io/endpoint?url=https://winget-validation-pme-f8gqfjhzacawbecy.z01.azurefd.net/api/GetServiceComponentStatusBadge?component=ValidationPipeline "Validation Pipeline Badge")](https://dev.azure.com/shine-oss/winget-pkgs/_build?definitionId=14)&nbsp;[![Publish Pipeline Badge](https://img.shields.io/endpoint?url=https://winget-validation-pme-f8gqfjhzacawbecy.z01.azurefd.net/api/GetServiceComponentStatusBadge?component=PublishPipeline "Publish Pipeline Badge")](https://dev.azure.com/shine-oss/winget-pkgs/_build?definitionId=12)
+
+
+                - #325114
           # If the user is a first-time contributor, add the Needs-CLA Label
           - if:
               - activitySenderHasAssociation:
@@ -103,6 +106,9 @@ configuration:
           - not:
               filesMatchPattern:
                 pattern: ^manifests/*
+          - not:
+              filesMatchPattern:
+                pattern: ^fonts/*
           - not:
               filesMatchPattern:
                 pattern: DevOpsPipelineDefinitions
@@ -196,7 +202,7 @@ configuration:
           - addLabel:
               label: Project-File
       - description: >-
-          When a PR is opened/updated, if the content contains .validation and user is not repo admin
+          When a PR is opened/updated, if the content contains .validation and user is not repo admin or authorized bot
           * Add Author-Not-Authorized label
         if:
           - payloadType: Pull_Request
@@ -209,6 +215,9 @@ configuration:
           - not:
               activitySenderHasPermission:
                 permission: Admin
+          - not:
+              isActivitySender:
+                user: wingetbot
         then:
           - addLabel:
               label: Author-Not-Authorized
@@ -227,6 +236,18 @@ configuration:
           - not:
               activitySenderHasPermission:
                 permission: Admin
+          - not:
+              isActivitySender:
+                user: dkbennett
+          - not:
+              isActivitySender:
+                user: denelon
+          - not:
+              isActivitySender:
+                user: Trenly
+          - not:
+              isActivitySender:
+                user: mdanish-kh
         then:
           - addReply:
               reply: >-
